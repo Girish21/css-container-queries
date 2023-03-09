@@ -1,44 +1,10 @@
-import {DATA} from './data'
-
 function App() {
   return (
-    <main>
-      <header>
-        <h1>Container Queries</h1>
-      </header>
-      <section>
-        {DATA.map(data => (
-          <Card key={data.id} {...data} />
-        ))}
-      </section>
+    <main className='grid h-full place-content-center'>
+      <pre>
+        <code>Switch to `example-start` branch</code>
+      </pre>
     </main>
-  )
-}
-
-function Card({
-  description,
-  image,
-  subText,
-  title,
-}: {
-  description: string
-  image: string
-  subText: string
-  title: string
-}) {
-  return (
-    <article data-container>
-      <div data-wrapper>
-        <div data-image-wrapper>
-          <img aria-hidden src={image} />
-        </div>
-        <hgroup>
-          <h2>{title}</h2>
-          <p>{subText}</p>
-        </hgroup>
-        <p>{description}</p>
-      </div>
-    </article>
   )
 }
 
