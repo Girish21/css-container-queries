@@ -1,10 +1,21 @@
 function App() {
   return (
-    <main className='grid h-full place-content-center'>
-      <pre>
-        <code>Switch to `example-start` branch</code>
-      </pre>
+    <main>
+      <ArticleGrid />
     </main>
+  )
+}
+
+function ArticleGrid() {
+  return (
+    <div data-container>
+      <section>
+        <article />
+        <article />
+        <article />
+        <article />
+      </section>
+    </div>
   )
 }
 
