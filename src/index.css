@@ -56,6 +56,9 @@ section {
 }
 
 article {
+}
+
+div[data-wrapper] {
   width: 100%;
   height: var(--container-height);
   position: relative;
@@ -75,13 +78,13 @@ article {
     38.5px 36.7px 35.2px rgba(0, 0, 0, 0.002), 105px 100px 93px rgba(0, 0, 0, 0);
 }
 
-article > div[data-image-wrapper] {
+div[data-wrapper] div[data-image-wrapper] {
   overflow: hidden;
 
   grid-area: var(--article-image-area);
 }
 
-article img {
+div[data-wrapper] img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -90,7 +93,7 @@ article img {
     filter 300ms cubic-bezier(0.15, 0.51, 0.51, 0.88);
 }
 
-article hgroup {
+div[data-wrapper] hgroup {
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -106,7 +109,7 @@ article hgroup {
   grid-area: var(--articel-header-area);
 }
 
-article hgroup:before {
+div[data-wrapper] hgroup:before {
   content: '';
   position: absolute;
   top: 0;
@@ -121,22 +124,22 @@ article hgroup:before {
   );
 }
 
-article hgroup > * {
+div[data-wrapper] hgroup > * {
   z-index: 1;
 }
 
-article hgroup > h2 {
+div[data-wrapper] hgroup > h2 {
   font-size: 1.25rem;
   font-weight: 700;
 }
 
-article hgroup > p {
+div[data-wrapper] hgroup > p {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-article > p {
+div[data-wrapper] > p {
   padding: 8px;
   grid-area: var(--articel-paragraph-area);
 }
@@ -157,7 +160,7 @@ article > p {
     font-size: 3rem;
   }
 
-  :root {
+  div[data-wrapper] {
     --container-height: 128px;
 
     --article-grid-columns: repeat(12, 1fr);
@@ -168,15 +171,15 @@ article > p {
     --articel-paragraph-area: var(--description-right-bottom);
   }
 
-  article hgroup:before {
-    content: none;
+  div[data-wrapper] hgroup:before {
+    display: none;
   }
 
-  article hgroup > h2 {
+  div[data-wrapper] hgroup > h2 {
     color: var(--gray-900);
   }
 
-  article hgroup > p {
+  div[data-wrapper] hgroup > p {
     color: var(--gray-700);
   }
 }
@@ -186,7 +189,7 @@ article > p {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  :root {
+  div[data-wrapper] {
     --container-height: 320px;
 
     --article-image-area: var(--image-top);
@@ -194,18 +197,18 @@ article > p {
     --articel-paragraph-area: var(--description-bottom);
   }
 
-  article hgroup > h2,
-  article hgroup > p {
+  div[data-wrapper] hgroup > h2,
+  div[data-wrapper] hgroup > p {
     color: var(--white);
   }
 
-  article hgroup:before {
-    content: '';
+  div[data-wrapper] hgroup:before {
+    display: block;
   }
 }
 
 @media (pointer: fine) {
-  article:hover img {
+  div[data-wrapper]:hover img {
     transform: scale(1.1);
     filter: blur(4px);
   }

@@ -27,15 +27,17 @@ function Card({
   title: string
 }) {
   return (
-    <article>
-      <div data-image-wrapper>
-        <img aria-hidden src={image} />
+    <article data-container>
+      <div data-wrapper>
+        <div data-image-wrapper>
+          <img aria-hidden src={image} />
+        </div>
+        <hgroup>
+          <h2>{title}</h2>
+          <p>{subText}</p>
+        </hgroup>
+        <p>{description}</p>
       </div>
-      <hgroup>
-        <h2>{title}</h2>
-        <p>{subText}</p>
-      </hgroup>
-      <p>{description}</p>
     </article>
   )
 }
